@@ -1,5 +1,8 @@
 ## Spring cloud 7day simple
 
+基于 http://git.oschina.net/zhou666/spring-cloud-7simple 的变种版;   
+主要是采用kotlin和gradle进行了重构 并且升级了boot和cloud的版本
+
 **7simple**总共有7个例子，展示了spring cloud的基本用法。
 
 -------------------
@@ -14,13 +17,13 @@
 
 -------------------
 ### 开发环境
-* IDE：myeclipse 10
-* JDK：jdk1.7
-* WINDOWS：mvn 3
+* IDE：IDEA
+* JDK：jdk 1.8
+* WINDOWS：GRADLE 4.1
 
 使用import导入普通工程即可使用
 
-* spring boot版本：1.3.5.RELEASE
+* spring boot版本：1.5.6.RELEASE
 * spring cloud版本：Brixton.RELEASE
 
 详细介绍见：http://www.cnblogs.com/skyblog/p/5127712.html
