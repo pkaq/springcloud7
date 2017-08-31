@@ -1,1 +1,1 @@
-kotlin+gradle�汾
+启动后访问 `http://localhost:8888`
