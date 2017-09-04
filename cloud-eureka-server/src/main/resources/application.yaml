@@ -1,4 +1,12 @@
+---
+spring:
+  profiles: reka-alpha
+  application:
+    name: reka-alpha
 eureka:
+  instance:
+    #配置主机名
+    hostname: localhost
   client:
     #  、在默认设置下，Eureka服务注册中心也会将自己作为客户端来尝试注册它自己，
     #    所以我们需要禁用它的客户端注册行为。
@@ -6,6 +14,36 @@ eureka:
     register-with-eureka: false
     fetch-registry: false
     service-url:
-      defaultZone: http://localhost:8899/eureka
+      defaultZone: http://localhost:9872/eureka, http://localhost:9873/eureka
 server:
-  port: 8899
+  port: 9871
+---
+spring:
+  profiles: reka-bravo
+  application:
+    name: reka-bravo
+eureka:
+  instance:
+    hostname: localhost
+  client:
+     register-with-eureka: false
+     fetch-registry: false
+     service-url:
+       defaultZone: http://localhost:9871/eureka, http://localhost:9873/eureka
+server:
+  port: 9872
+---
+spring:
+  profiles: reka-charlie
+  application:
+    name: reka-charlie
+eureka:
+  instance:
+    hostname: localhost
+  client:
+     register-with-eureka: false
+     fetch-registry: false
+     service-url:
+       defaultZone: http://localhost:9871/eureka, http://localhost:9872/eureka
+server:
+  port: 9873
