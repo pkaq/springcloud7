@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: reka-alpha
+eureka:
+  instance:
+    #配置主机名
+    hostname: localhost
+  client:
+    #  、在默认设置下，Eureka服务注册中心也会将自己作为客户端来尝试注册它自己，
+    #    所以我们需要禁用它的客户端注册行为。
+    #    因为当注册中心将自己作为客户端注册的时候，发现在server上的端口被自己占据了，然后就挂了
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://localhost:9871/eureka
+server:
+  port: 9871
