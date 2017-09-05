@@ -1,0 +1,42 @@
+# 表示使用docker-compose.yml的Version 2 file format编写
+version: "2"
+services:
+  #image
+  #指定镜像名称或者镜像id，如果该镜像在本地不存在，Compose会尝试pull下来。
+  alpha:
+  #  指定Dockerfile文件的路径。可以是一个路径
+  #  也可以是一个对象
+    build: ./eureka
+  #  暴露端口信息。使用宿主端口:容器端口的格式，或者仅仅指定容器的端口（此时宿主机将会随机指定端口），类似于docker run -p
+    ports:
+      - "9871:9871"
+
+  #  链接到其他服务中的容器。可以指定服务名称和链接的别名使用SERVICE:ALIAS 的形式，或者只指定服务名称，
+  #  links
+  #  暴露端口，只将端口暴露给连接的服务，而不暴露给宿主机
+    expose:
+      - 9871
+  #  environment
+  #  设置环境变量。可以使用数组或者字典两种方式。
+  #  只有一个key的环境变量可以在运行Compose的机器上找到对应的值，这有助于加密的或者特殊主机的值
+    environment:
+      - spring.profiles.active=reka-alpha
+  # 第二个
+  bravo:
+    build: ./eureka
+    ports:
+      - "9872:9872"
+    expose:
+      - 9872
+    environment:
+      - spring.profiles.active=reka-bravo
+  # 第三个
+  bravo:
+    build: ./eureka
+    ports:
+      - "9873:9873"
+    expose:
+      - 9873
+    environment:
+      - spring.profiles.active=reka-charlie
+
