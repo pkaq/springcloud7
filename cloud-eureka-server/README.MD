@@ -5,3 +5,6 @@ Eureka高可用集群配置
 每台注册中心分别又指向其它两个节点即可，使用application.yml来配置。
 
 Eureka Server的同步遵循着一个非常简单的原则：只要有一条边将节点连接，就可以进行信息传播与同步
+http://www.cnblogs.com/ityouknow/p/6854805.html
+
+https://eacdy.gitbooks.io/spring-cloud-book/content/
