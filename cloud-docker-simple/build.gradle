@@ -1,7 +1,15 @@
 plugins {
     id "org.jetbrains.kotlin.jvm" version "1.1.4-3"
+    id 'org.springframework.boot' version '1.5.6.RELEASE'
 }
-// 依赖配置
+
+def mainClassName = "org.pkaq.DockerBooter"
+
+bootRepackage {
+    mainClass = mainClassName
+}
+
+ //依赖配置
 dependencies {
     // kotlin标准库支持
     compile "org.jetbrains.kotlin:kotlin-stdlib:${kotlin}"
