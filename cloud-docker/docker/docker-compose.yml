@@ -31,7 +31,7 @@ services:
     environment:
       - spring.profiles.active=reka-bravo
   # 第三个
-  bravo:
+  charlie:
     build: ./eureka
     ports:
       - "9873:9873"
@@ -39,4 +39,3 @@ services:
       - 9873
     environment:
       - spring.profiles.active=reka-charlie
-
