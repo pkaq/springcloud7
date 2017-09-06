@@ -9,7 +9,7 @@ bootRepackage {
     mainClass = mainClassName
 }
 
- //依赖配置
+//依赖配置
 dependencies {
     // kotlin标准库支持
     compile "org.jetbrains.kotlin:kotlin-stdlib:${kotlin}"
