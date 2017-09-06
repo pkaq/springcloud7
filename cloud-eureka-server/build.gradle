@@ -1,7 +1,11 @@
 plugins {
     id "org.jetbrains.kotlin.jvm" version "1.1.4-3"
 }
+def mainClassName = "org.pkaq.EurekaBooter"
 
+bootRepackage {
+    mainClass = mainClassName
+}
 
 // 依赖配置
 dependencies {
