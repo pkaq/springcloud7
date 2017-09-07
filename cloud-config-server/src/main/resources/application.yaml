@@ -10,9 +10,19 @@ spring:
         # 在启动时就下载配置文件
           clone-on-start: true
         # 读取配置超时时间 默认5s
-          timeout: 15
+          timeout: 30
         # 强制读取远程版本(当本地版本被篡改时仍然保证使用远程副本)
           force-pull: true
+          repos:
+            alpha:
+              pattern: alpha-dev,alpha-prod
+              uri: https://github.com/pkaq/springcloud7.git
+            bravo:
+              clone-on-start: true
+              pattern:
+                - 'bravo/dev'
+                - 'bravo/prod'
+              uri: https://github.com/pkaq/springcloud7.git
         #  覆盖客户端相同属性
         overrides:
           foo: bar

@@ -50,6 +50,10 @@ spring:
           password: scott
 ```
 
+模式匹配多个库
+然而会发现在访问http://localhost:8080/master/special-default.yml显示profile:profile-default,即 https://git.coding.net/eggyer/learn-spring-cloud-config.git默认配置文件的内容
+原因是pattern: special*/dev*,special/test*,只匹配dev结尾和test结尾的内容.不建议使用这种方式,建议使用通配符的方式.
+
 - ##### [b].ssh认证
 这个比较简单,只要将`uri`中的地址换成对应的ssh地址,并且保证你本地`~/.ssh`目录中存储好认证的`key`即可
 
@@ -115,3 +119,11 @@ compile "org.springframework.cloud:spring-cloud-config-server:1.5.6.RELEASE"
 ## 5.健康检查
 ## 6.安全配置
 需要添加`spring-boot-starter-security`依赖包,进行安全认证配置,
+
+## 7.加密解密
+Spring Cloud可以在本地进行预处理的解密，与Config Server有相同的规则，通过设置相同的`encrypt.*`来实现。
+因此，可以使用加密的值在`{cipher}*`上，在应用通过`Environment`获得属值之前进行解密。使用加密特性需要包含Spring Security RSA的包到classpath。
+Maven依赖”org.springframework.security:spring-security-rsa”。并且，需要在JVM添加JCE扩展。 
+如果使用Sun的JDK遇到`Illegal key size`异常，需要安装JCE 更多信息请查看：
+
+
