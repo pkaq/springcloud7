@@ -1,9 +1,11 @@
 spring:
   cloud:
     config:
+      name: configcenter
       server:
         git:
-          uri: https://git.oschina.net/pkaq/spring-cloud-7simple.git
+          uri: git@github.com:pkaq/springcloud7.git
           search-paths: cloud-config-repo
+          clone-on-start: true
 server:
   port: 8888
