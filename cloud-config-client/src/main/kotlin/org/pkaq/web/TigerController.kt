@@ -9,8 +9,11 @@ class TigerController {
     @Value("\${tiger}")
     internal var roar: String? = null
 
+    @Value("\${foo}")
+    internal var foo: String? = null
+
     @RequestMapping("/say")
     fun say(): String {
-        return "Tiger say:" + roar!!
+        return "foo "+ foo+" - >Tiger say:" + roar!!
     }
 }

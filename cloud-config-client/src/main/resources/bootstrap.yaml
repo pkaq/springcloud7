@@ -10,3 +10,5 @@ spring:
       profile: dev
       # 要读取的配置文件名
       name: appliaction
+      username: pkaq
+      password: pkaqx
