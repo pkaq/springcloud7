@@ -7,4 +7,4 @@ spring:
 server:
   context-path: /
   port: 8090
-tiger: Roar-app
+tiger: alpha-prod
