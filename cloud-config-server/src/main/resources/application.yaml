@@ -1,11 +1,27 @@
 spring:
   cloud:
     config:
-      name: configcenter
       server:
         git:
-          uri: git@github.com:pkaq/springcloud7.git
+        # 远程仓库地址
+          uri: https://git.oschina.net/pkaq/spring-cloud-7simple.git
+        # 子目录
           search-paths: cloud-config-repo
+        # 在启动时就下载配置文件
           clone-on-start: true
+        # 读取配置超时时间 默认5s
+          timeout: 15
+        # 强制读取远程版本(当本地版本被篡改时仍然保证使用远程副本)
+          force-pull: true
+        #  覆盖客户端相同属性
+        overrides:
+          foo: bar
 server:
   port: 8888
+# 访问认证
+security:
+  basic:
+    enabled: true
+  user:
+    name: pkaq
+    password: pkaqx

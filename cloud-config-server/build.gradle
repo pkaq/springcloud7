@@ -7,9 +7,10 @@ plugins {
 dependencies {
     // kotlin标准库支持
     compile "org.jetbrains.kotlin:kotlin-stdlib:${kotlin}"
-    // 编译成java8规范字节码.
+    // 编译成java8规范字节码
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlin}"
-     // cloud相关依赖
-     compile "org.springframework.cloud:spring-cloud-config-server:${cloud_config}"
+    // cloud相关依赖
+    compile "org.springframework.cloud:spring-cloud-config-server:${cloud_config}",
+            "org.springframework.boot:spring-boot-starter-security:${springboot}"
 
 }
