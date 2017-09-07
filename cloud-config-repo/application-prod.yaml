@@ -1,4 +1,9 @@
 spring:
+  cloud:
+    config:
+      server:
+        overrides:
+          foo: bar
   mvc:
     date-format: yyyy-MM-dd
     view:
