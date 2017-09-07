@@ -1,2 +1,6 @@
-/cloud-config-client/*.iml
-/cloud-config-server/*.iml
+/springcloud7.ipr
+/springcloud7.iws
+/.gradle
+/.idea
+/build
+/springcloud7.iml
