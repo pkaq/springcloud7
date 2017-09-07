@@ -1,4 +1,18 @@
+#Spring Cloud会创建一个`Bootstrap Context`，作为Spring应用的`Application Context`的父上下文。初始化的时候，
+#`Bootstrap Context`负责从外部源加载配置属性并解析配置。这两个上下文共享一个从外部获取的`Environment`。
+#`Bootstrap`属性有高优先级，默认情况下，它们不会被本地配置覆盖。 `Bootstrap context`和`Application Context`有着不同的约定，所以新增了一个`bootstrap.yml`文件，
+#而不是使用`application.yml` (或者`application.properties`)。保证`Bootstrap Context`和`Application Context`配置的分离。下面是一个例子： **bootstrap.yml*
 #注意这里是bootstrap.yml而不是appliction.yml,因为bootstrap.yml会在应用启动之前读取,而spring.cloud.config.uri会影响应用启动
+
+#可以通过设置`spring.cloud.bootstrap.enabled=false`来禁用`bootstrap`。
+#bootstrap.yml是由spring.cloud.bootstrap.name（默认:”bootstrap”）或者spring.cloud.bootstrap.location（默认空）来定义的
+
+#property sources被bootstrap context 添加到应用通常通过远程的方式，比如”Config Server”。默认情况下，本地的配置文件不能覆盖远程配置，但是可以通过启动命令行参数来覆盖远程配置。如果需要本地文件覆盖远程文件，需要在远程配置文件里设置授权
+#spring.cloud.config.allowOverride=true（这个配置不能在本地被设置）。一旦设置了这个权限，你可以配置更加细粒度的配置来配置覆盖的方式，
+#
+#比如：
+#- spring.cloud.config.overrideNone=true 覆盖任何本地属性
+#- spring.cloud.config.overrideSystemProperties=false 仅仅系统属性和环境变量
 spring:
   application:
     name: cloud-config-client
