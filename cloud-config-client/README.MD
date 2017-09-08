@@ -60,7 +60,7 @@ spring:
 源文件见PropertySourceBootstrapPropertie
 
 
-## .启动服务,大功告成.
+## 3.启动服务,大功告成.
 
     端口号采用配置中心相应配置文件的端口
 启动后访问 http://localhost:port/say
