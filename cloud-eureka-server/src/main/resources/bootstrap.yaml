@@ -1,0 +1,9 @@
+spring:
+  cloud:
+    config:
+      uri: http://localhost:8888
+      name: eureka-server
+      label: lab
+      profile: standalone
+      username: pkaq
+      password: pkaqx
