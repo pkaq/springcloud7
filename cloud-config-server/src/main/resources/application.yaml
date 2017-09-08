@@ -1,4 +1,7 @@
+
 spring:
+  application:
+    name: config-server
   cloud:
     config:
       server:
@@ -10,31 +13,9 @@ spring:
         # 在启动时就下载配置文件
           clone-on-start: true
         # 读取配置超时时间 默认5s
-          timeout: 15
+          timeout: 10
         # 强制读取远程版本(当本地版本被篡改时仍然保证使用远程副本)
           force-pull: true
-#          多仓库配置
-#          repos:
-#            别名,随意
-#            repo-a:
-#               匹配符
-#               pattern:
-#                  - 'bravo*'
-#               仓库地址
-#               uri: file://D:/Work/git/spring-cloud-7simple
-#            repo-b:
-#               pattern:
-#                  - 'alpha*'
-#               uri: file://D:/Work/git/spring-cloud-7simple
-        #  覆盖客户端相同属性
-        overrides:
-          foo: bar
-#        健康检查
-        health:
-          repositories:
-            repo-a:
-              name: bravo
-              profiles: dev
 server:
   port: 8888
 # 访问认证
