@@ -1,3 +1,5 @@
+# Spring Cloud 之创建配置中心服务-服务端
+
 在开发微服务时,各个服务有一些共同的配置,若是几十个微服务那么便需要将这些配置复制几十份.在开发过程中,对这些配置文件的编辑维护是一件十分麻烦的事情,若是可以对这些公用配置进行统一配置无疑将会极大减轻维护的难度和工作量,借助spring提供的配置中心服务可以对这些公共配置进行统一管理,具体操作如下
 
 ## 1 创建配置中心仓库
@@ -55,6 +57,9 @@ spring:
           timeout: 15
         # 强制读取远程版本(当本地版本被篡改时仍然保证使用远程副本)
           force-pull: true
+        # 禁止调用端覆盖此属性
+          overrides:
+            foo: bar
 #          多仓库配置
           repos:
 #            别名,随意
@@ -135,3 +140,6 @@ security:
     name: pkaq
     password: pkaqx
 ```
+
+**参考**
+- http://cloud.spring.io/spring-cloud-static/Dalston.SR3/
