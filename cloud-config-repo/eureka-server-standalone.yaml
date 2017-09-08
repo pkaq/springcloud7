@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: reka-standalone
+eureka:
+  instance:
+    #配置主机名
+    hostname: localhost
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://localhost:9872/eureka,
+server:
+  port: 9871
