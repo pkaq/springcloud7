@@ -19,5 +19,6 @@ dependencies {
     compile "org.springframework.boot:spring-boot-starter-web:${springboot}",
             "org.apache.tomcat.embed:tomcat-embed-jasper:${tomcat_embed}"
      // cloud相关依赖
-     compile "org.springframework.cloud:spring-cloud-starter-eureka-server:${cloud_eureka}"
+     compile "org.springframework.cloud:spring-cloud-starter-eureka-server:${cloud_eureka}",
+             "org.springframework.cloud:spring-cloud-starter-config:${cloud_config}"
 }
