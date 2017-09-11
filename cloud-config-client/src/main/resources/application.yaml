@@ -1,1 +1,9 @@
 foo: 2000
+# 要注册的服务名字
+spring:
+ application:
+    name: tiger
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9871/eureka

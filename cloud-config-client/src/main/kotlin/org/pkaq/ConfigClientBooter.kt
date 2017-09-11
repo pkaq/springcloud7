@@ -2,8 +2,10 @@ package org.pkaq
 
 import org.springframework.boot.CommandLineRunner
 import org.springframework.boot.autoconfigure.SpringBootApplication
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient
 
 @SpringBootApplication
+@EnableEurekaClient
 open class Booter: CommandLineRunner{
     @Throws(Exception::class)
     override fun run(vararg args: String) {

@@ -1,8 +1,6 @@
 plugins {
     id "org.jetbrains.kotlin.jvm" version "1.1.4-3"
 }
-
-
 // 依赖配置
 dependencies {
     // kotlin标准库支持
@@ -11,7 +9,9 @@ dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlin}"
     // boot相关依赖
     compile "org.springframework.boot:spring-boot-starter-web:${springboot}",
-            "org.apache.tomcat.embed:tomcat-embed-jasper:${tomcat_embed}"
+            "org.apache.tomcat.embed:tomcat-embed-jasper:${tomcat_embed}",
+            "org.springframework.boot:spring-boot-starter-actuator:${springboot}"
      // cloud相关依赖
-     compile "org.springframework.cloud:spring-cloud-starter-config:${cloud_config}"
+     compile "org.springframework.cloud:spring-cloud-starter-config:${cloud_config}",
+             "org.springframework.cloud:spring-cloud-starter-eureka:${cloud_config}"
 }

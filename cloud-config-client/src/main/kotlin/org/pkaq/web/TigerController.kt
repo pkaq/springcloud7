@@ -1,11 +1,16 @@
 package org.pkaq.web
 
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Value
+import org.springframework.cloud.client.discovery.DiscoveryClient
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
 class TigerController {
+    @Autowired
+    var discoveryClient: DiscoveryClient? = null
+
     @Value("\${tiger}")
     internal var roar: String? = null
 
@@ -14,6 +19,7 @@ class TigerController {
 
     @RequestMapping("/say")
     fun say(): String {
-        return "foo "+ foo+" - >Tiger say:" + roar!!
+        val services = "Services: " + discoveryClient!!.services
+        return services+"-> foo "+ foo+" - >Tiger say:" + roar!!
     }
 }
