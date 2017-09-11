@@ -11,7 +11,8 @@ dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlin}"
     // boot相关依赖
     compile "org.springframework.boot:spring-boot-starter-web:${springboot}",
-            "org.apache.tomcat.embed:tomcat-embed-jasper:${tomcat_embed}"
+            "org.apache.tomcat.embed:tomcat-embed-jasper:${tomcat_embed}",
+            "org.springframework.boot:spring-boot-starter-actuator:${springboot}"
      // cloud相关依赖
      compile "org.springframework.cloud:spring-cloud-starter-eureka-server:${cloud_eureka}"
 
