@@ -12,6 +12,7 @@ allprojects {
 	     tomcat_embed = "8.5.4"
 	     cloud_config = "1.3.2.RELEASE"
 	     cloud_eureka = "1.3.4.RELEASE"
+	     feign_httpclient = "8.18.0"
 	}
 
 	repositories {
