@@ -15,4 +15,5 @@ dependencies {
      compile "org.springframework.cloud:spring-cloud-starter-config:${cloud_config}",
              "org.springframework.cloud:spring-cloud-starter-eureka:${cloud_config}",
              "org.springframework.cloud:spring-cloud-starter-feign:${cloud_config}"
+      compile "com.netflix.feign:feign-httpclient:${feign_httpclient}"
 }
