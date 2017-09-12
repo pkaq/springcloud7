@@ -5,4 +5,5 @@ include 'cloud-eureka-server-simple'
 include 'cloud-eureka-server'
 include 'cloud-docker-simple'
 include 'cloud-docker'
+include 'cloud-config-rabbit'
 
