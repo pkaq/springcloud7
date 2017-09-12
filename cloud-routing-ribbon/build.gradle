@@ -13,5 +13,6 @@ dependencies {
             "org.springframework.boot:spring-boot-starter-actuator:${springboot}"
      // cloud相关依赖
      compile "org.springframework.cloud:spring-cloud-starter-config:${cloud_config}",
-             "org.springframework.cloud:spring-cloud-starter-eureka:${cloud_config}"
+             "org.springframework.cloud:spring-cloud-starter-eureka:${cloud_config}",
+             "org.springframework.cloud:spring-cloud-starter-ribbon:${cloud_config}"
 }
