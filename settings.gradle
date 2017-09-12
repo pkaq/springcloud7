@@ -1,9 +1,10 @@
 rootProject.name = 'springcloud7'
 include 'cloud-config-server'
-include 'cloud-config-client'
+include 'cloud-service-client'
 include 'cloud-eureka-server-simple'
 include 'cloud-eureka-server'
 include 'cloud-docker-simple'
 include 'cloud-docker'
-include 'cloud-config-rabbit'
+include 'cloud-service-rabbit'
+include 'cloud-routing-ribbon'
 
