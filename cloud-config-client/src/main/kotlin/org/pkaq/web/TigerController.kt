@@ -20,6 +20,7 @@ class TigerController {
     @RequestMapping("/say")
     fun say(): String {
         val services = "Services: " + discoveryClient!!.services
+        println("Tiger Roar")
         return services+"-> foo "+ foo+" - >Tiger say:" + roar!!
     }
 }
