@@ -70,15 +70,16 @@ var restTemplate: RestTemplate? = null
 @RequestMapping("/jump")
     fun say(): String {
         // 这里配置要调用发的服务提供者的spring.
-        var microServiceNode = "tiger"
-        var serviceName = "say"
-        var serviceInstance  = loadBalancerClient!!.choose(microServiceNode)
+        val microServiceNode = "tiger"
+        val serviceName = "say"
+        val serviceInstance  = loadBalancerClient!!.choose(microServiceNode)
         
-        var url = "http://"+serviceInstance.host+":"+serviceInstance.port+"/"+serviceName
+        val url = "http://"+serviceInstance.host+":"+serviceInstance.port+"/"+serviceName
         
         return restTemplate!!.getForObject(url, String::class.java)+" - > Rabbit"
     }
 }
 ```
+可以看到 采用这种方式 比较繁琐,其中拼接url的部分代码会产生大量重复,或许你第一反应会是封装一下,但好在已经有了足够多的现成轮子可以使用
    5.启动服务,大功告成
 
